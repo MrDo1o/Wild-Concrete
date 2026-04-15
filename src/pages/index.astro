@@ -104,18 +104,65 @@ const products = [
       }
       .hero {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 1.4rem;
-        border: 1px solid var(--ink);
-        background: linear-gradient(145deg, #fbfaf6 0%, #f2ede4 100%);
+        align-content: center;
+        justify-items: center;
+        text-align: center;
+        border: 1px solid var(--stone);
+        background: linear-gradient(145deg, #fbfaf6 0%, #efebe5 100%);
         margin-bottom: 2.2rem;
-        padding: 1.5rem;
+        min-height: clamp(360px, 68vh, 760px);
+        padding: clamp(2rem, 7vw, 4rem) 1.5rem;
       }
-      .kicker {
-        margin: 0 0 0.55rem;
+
+      .logo-stack {
+        margin: 0 0 1.1rem;
+      }
+
+      .logo-line,
+      .logo-studio {
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+        color: #232529;
+      }
+
+      .logo-line {
+        line-height: 0.92;
+        font-size: clamp(2.2rem, 10vw, 8.4rem);
+        letter-spacing: 0.01em;
+      }
+
+      .logo-studio {
+        margin-top: clamp(0.9rem, 2vw, 1.6rem);
+        font-size: clamp(0.95rem, 2.2vw, 2.2rem);
+        letter-spacing: 0.58em;
+        text-indent: 0.58em;
+      }
+
+      .hero-sub {
+        margin: 0 0 1rem;
+        max-width: 58ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.7rem;
+      }
+
+      .hero-actions a {
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        text-decoration: none;
+        padding: 0.45rem 0.9rem;
         font-size: 0.72rem;
-        letter-spacing: 0.17em;
+        letter-spacing: 0.13em;
         text-transform: uppercase;
+      }
+
+      .hero-actions a.primary {
+        background: var(--ink);
+        color: var(--bone);
       }
       h1,
       h2,
@@ -129,24 +176,8 @@ const products = [
         margin-bottom: 0.65rem;
         font-size: clamp(2.1rem, 6vw, 4rem);
       }
-      .hero-meta {
-        border-left: 1px solid var(--stone);
-        padding-left: 1.1rem;
-        display: grid;
-        gap: 0.65rem;
-        align-content: start;
-      }
-      .hero-meta p,
-      .hero p,
       .section-intro {
         margin: 0;
-      }
-      .hero-meta strong {
-        display: block;
-        margin-bottom: 0.2rem;
-        font-size: 0.72rem;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
       }
       .section {
         margin-bottom: 2.2rem;
@@ -202,14 +233,13 @@ const products = [
         font-size: 1.03rem;
       }
       @media (max-width: 860px) {
-        .hero {
-          grid-template-columns: 1fr;
+        .logo-line {
+          line-height: 0.96;
         }
-        .hero-meta {
-          border-left: 0;
-          border-top: 1px solid var(--stone);
-          padding-left: 0;
-          padding-top: 0.9rem;
+
+        .logo-studio {
+          letter-spacing: 0.45em;
+          text-indent: 0.45em;
         }
       }
     </style>
@@ -226,16 +256,16 @@ const products = [
       </header>
 
       <section class="hero" aria-label="Hero">
-        <div>
-          <p class="kicker">Editorial Floral House</p>
-          <h1>Elitist. Natural. Precise.</h1>
-          <p>Tropical rainforest florals shaped with clean architectural lines. Softness handled like structure.</p>
+        <div class="logo-stack" role="img" aria-label="Wild Concrete Studio">
+          <p class="logo-line">WILD</p>
+          <p class="logo-line">CONCRETE</p>
+          <p class="logo-studio">STUDIO</p>
         </div>
-        <aside class="hero-meta">
-          <p><strong>Direction</strong>Monochrome base, expressive blooms, disciplined spacing.</p>
-          <p><strong>Experience</strong>Design studio first. Store second. Intentional and calm.</p>
-          <p><strong>Palette</strong>Bone, black, stone, moss, and deep red accents.</p>
-        </aside>
+        <p class="hero-sub">Softness, shaped by structure. Editorial tropical florals with clean studio direction.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#pricing">Shop Collection</a>
+          <a href="#intro">Request Bespoke</a>
+        </div>
       </section>
 
       <section class="section" id="intro">
