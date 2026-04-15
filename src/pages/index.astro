@@ -5,6 +5,7 @@ const products = [
     description: 'Premium sculptural orchid set for entry console or dining statement.',
     sku: 'WC-FL-01',
     price: '$85',
+    priceCents: 8500,
     image: 'https://placehold.co/900x1125/efe8dd/121212?text=Rainforest+Flower+01'
   },
   {
@@ -12,6 +13,7 @@ const products = [
     description: 'Tall tropical stems with warm intensity and clean directional silhouette.',
     sku: 'WC-FL-02',
     price: '$72',
+    priceCents: 7200,
     image: 'https://placehold.co/900x1125/e9e1d5/121212?text=Rainforest+Flower+02'
   },
   {
@@ -19,6 +21,7 @@ const products = [
     description: 'Glossy, modern anthurium composition with understated luxury finish.',
     sku: 'WC-FL-03',
     price: '$78',
+    priceCents: 7800,
     image: 'https://placehold.co/900x1125/e6ddd1/121212?text=Rainforest+Flower+03'
   },
   {
@@ -26,6 +29,7 @@ const products = [
     description: 'Long-form greenery and ginger bloom arrangement for lounge styling.',
     sku: 'WC-FL-04',
     price: '$64',
+    priceCents: 6400,
     image: 'https://placehold.co/900x1125/dfd6ca/121212?text=Rainforest+Flower+04'
   },
   {
@@ -33,6 +37,7 @@ const products = [
     description: 'Compact high-impact color block plant for shelf and side table moments.',
     sku: 'WC-FL-05',
     price: '$52',
+    priceCents: 5200,
     image: 'https://placehold.co/900x1125/d9d0c4/121212?text=Rainforest+Flower+05'
   },
   {
@@ -40,6 +45,7 @@ const products = [
     description: 'Curated seasonal mix for clients testing palette and texture direction.',
     sku: 'WC-FL-06',
     price: '$96',
+    priceCents: 9600,
     image: 'https://placehold.co/900x1125/d2c8bc/121212?text=Rainforest+Flower+06'
   }
 ];
@@ -232,6 +238,131 @@ const products = [
         color: var(--red);
         font-size: 1.03rem;
       }
+
+      .checkout {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+
+      .checkout-card {
+        background: var(--card);
+        border: 1px solid var(--stone);
+        padding: 1rem;
+      }
+
+      .checkout-grid {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .checkout-grid .full {
+        grid-column: 1 / -1;
+      }
+
+      .field {
+        display: grid;
+        gap: 0.28rem;
+      }
+
+      .field label {
+        font-size: 0.71rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--stone);
+        background: #fff;
+        color: var(--ink);
+        padding: 0.56rem 0.62rem;
+        font: inherit;
+      }
+
+      .field textarea {
+        min-height: 82px;
+        resize: vertical;
+      }
+
+      .payment-methods {
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .pay-option {
+        border: 1px solid var(--stone);
+        padding: 0.55rem 0.62rem;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .pay-option strong {
+        font-size: 0.9rem;
+      }
+
+      .pay-option span {
+        color: #4a4a4a;
+        font-size: 0.84rem;
+      }
+
+      .checkout-summary p {
+        margin: 0;
+      }
+
+      .summary-line {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.45rem 0;
+        border-bottom: 1px solid var(--stone);
+      }
+
+      .checkout-actions {
+        margin-top: 0.8rem;
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .checkout-actions button {
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--bone);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        padding: 0.55rem 0.85rem;
+        cursor: pointer;
+      }
+
+      .checkout-actions button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .checkout-status {
+        margin-top: 0.65rem;
+        font-size: 0.84rem;
+        min-height: 1.2em;
+      }
+
+      .checkout-status.error {
+        color: #8d2323;
+      }
+
+      .checkout-status.success {
+        color: #1e4f2c;
+      }
+
+      .api-note {
+        color: #4a4a4a;
+        font-size: 0.82rem;
+      }
+
       @media (max-width: 860px) {
         .logo-line {
           line-height: 0.96;
@@ -240,6 +371,10 @@ const products = [
         .logo-studio {
           letter-spacing: 0.45em;
           text-indent: 0.45em;
+        }
+
+        .checkout {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -292,6 +427,270 @@ const products = [
           ))}
         </div>
       </section>
+
+      <section class="section" id="checkout">
+        <h2>Checkout</h2>
+        <p class="section-intro">Customer checkout framework with API hooks for Square, Cash App Pay, Apple Pay, and Google Pay.</p>
+
+        <div class="checkout">
+          <form class="checkout-card" id="checkout-form" novalidate>
+            <div class="checkout-grid">
+              <div class="field full">
+                <label for="customerName">Customer Name</label>
+                <input id="customerName" name="customerName" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" />
+              </div>
+
+              <div class="field">
+                <label for="sku">Product</label>
+                <select id="sku" name="sku">
+                  {products.map((item) => (
+                    <option value={item.sku} data-name={item.name} data-price-cents={item.priceCents}>{item.name} ({item.price})</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" name="quantity" type="number" value="1" min="1" max="50" required />
+              </div>
+
+              <div class="field full">
+                <label for="addressLine1">Address</label>
+                <input id="addressLine1" name="addressLine1" autocomplete="address-line1" />
+              </div>
+
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="city" autocomplete="address-level2" />
+              </div>
+
+              <div class="field">
+                <label for="state">State</label>
+                <input id="state" name="state" autocomplete="address-level1" />
+              </div>
+
+              <div class="field">
+                <label for="postalCode">Zip</label>
+                <input id="postalCode" name="postalCode" autocomplete="postal-code" />
+              </div>
+
+              <div class="field full">
+                <label for="notes">Order Notes</label>
+                <textarea id="notes" name="notes" placeholder="Card message, delivery window, or special requests"></textarea>
+              </div>
+            </div>
+
+            <h3 style="margin: 1rem 0 0.6rem;">Payment Method</h3>
+            <div class="payment-methods">
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="square_card" checked />
+                <span><strong>Card (Square)</strong> Standard card checkout session.</span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="cash_app_pay" />
+                <span><strong>Cash App Pay</strong> Square digital wallet flow.</span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="apple_pay" />
+                <span><strong>Apple Pay</strong> Wallet checkout session for Safari/iOS.</span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="google_pay" />
+                <span><strong>Google Pay</strong> Wallet checkout session for Chrome/Android.</span>
+              </label>
+            </div>
+
+            <div class="checkout-actions">
+              <button type="submit">Create Secure Checkout</button>
+              <button type="button" class="secondary" id="simulateBtn">Simulate API Response</button>
+            </div>
+            <p class="checkout-status" id="checkoutStatus" aria-live="polite"></p>
+          </form>
+
+          <aside class="checkout-card checkout-summary">
+            <h3 style="margin-bottom: 0.8rem;">Order Summary</h3>
+            <div class="summary-line">
+              <p id="summaryItem">Canopy Glow Orchid</p>
+              <p id="summaryPrice">$85.00</p>
+            </div>
+            <div class="summary-line">
+              <p>Quantity</p>
+              <p id="summaryQty">1</p>
+            </div>
+            <div class="summary-line">
+              <p>Subtotal</p>
+              <p id="summarySubtotal">$85.00</p>
+            </div>
+            <div class="summary-line">
+              <p>Service + Handling</p>
+              <p>$8.50</p>
+            </div>
+            <div class="summary-line" style="font-weight: 700;">
+              <p>Total</p>
+              <p id="summaryTotal">$93.50</p>
+            </div>
+            <p class="api-note" style="margin-top: 0.9rem;">
+              API-ready contract: this form sends JSON to provider-specific endpoints. Wire your backend to return
+              <code>checkoutUrl</code> and the client auto-redirects.
+            </p>
+          </aside>
+        </div>
+      </section>
     </main>
+
+    <script is:inline>
+      const CHECKOUT_API_BASE = window.WC_CHECKOUT_API_BASE || "https://api.wildconcrete.studio";
+      const HANDLING_FEE_RATE = 0.1;
+      const providerRoutes = {
+        square_card: "/checkout/square/card-session",
+        cash_app_pay: "/checkout/square/cash-app-session",
+        apple_pay: "/checkout/square/apple-pay-session",
+        google_pay: "/checkout/square/google-pay-session"
+      };
+
+      const form = document.getElementById("checkout-form");
+      const skuSelect = document.getElementById("sku");
+      const qtyInput = document.getElementById("quantity");
+      const statusEl = document.getElementById("checkoutStatus");
+      const simulateBtn = document.getElementById("simulateBtn");
+
+      const summaryItem = document.getElementById("summaryItem");
+      const summaryPrice = document.getElementById("summaryPrice");
+      const summaryQty = document.getElementById("summaryQty");
+      const summarySubtotal = document.getElementById("summarySubtotal");
+      const summaryTotal = document.getElementById("summaryTotal");
+
+      const toUsd = (cents) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(cents / 100);
+
+      function getSelectedProduct() {
+        const option = skuSelect.selectedOptions[0];
+        return {
+          sku: option.value,
+          name: option.dataset.name,
+          priceCents: Number(option.dataset.priceCents || 0)
+        };
+      }
+
+      function getQuantity() {
+        const value = Number(qtyInput.value || 1);
+        return Math.max(1, Math.min(50, Math.floor(value)));
+      }
+
+      function renderSummary() {
+        const product = getSelectedProduct();
+        const qty = getQuantity();
+        const subtotal = product.priceCents * qty;
+        const fee = Math.round(subtotal * HANDLING_FEE_RATE);
+
+        summaryItem.textContent = product.name;
+        summaryPrice.textContent = toUsd(product.priceCents);
+        summaryQty.textContent = String(qty);
+        summarySubtotal.textContent = toUsd(subtotal);
+        summaryTotal.textContent = toUsd(subtotal + fee);
+      }
+
+      function setStatus(text, type = "") {
+        statusEl.textContent = text;
+        statusEl.className = "checkout-status" + (type ? " " + type : "");
+      }
+
+      function buildPayload() {
+        const product = getSelectedProduct();
+        const qty = getQuantity();
+        const subtotalCents = product.priceCents * qty;
+        const feeCents = Math.round(subtotalCents * HANDLING_FEE_RATE);
+        const totalCents = subtotalCents + feeCents;
+        const paymentMethod = form.querySelector("input[name='paymentMethod']:checked")?.value || "square_card";
+
+        return {
+          source: "wildconcrete.studio",
+          paymentMethod,
+          customer: {
+            name: form.customerName.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim()
+          },
+          shipping: {
+            addressLine1: form.addressLine1.value.trim(),
+            city: form.city.value.trim(),
+            state: form.state.value.trim(),
+            postalCode: form.postalCode.value.trim()
+          },
+          items: [
+            {
+              sku: product.sku,
+              name: product.name,
+              quantity: qty,
+              unitAmountCents: product.priceCents
+            }
+          ],
+          notes: form.notes.value.trim(),
+          amounts: {
+            subtotalCents,
+            feeCents,
+            totalCents,
+            currency: "USD"
+          }
+        };
+      }
+
+      async function createCheckoutSession(payload) {
+        const route = providerRoutes[payload.paymentMethod];
+        if (!route) {
+          throw new Error("Unsupported payment method.");
+        }
+        const response = await fetch(CHECKOUT_API_BASE + route, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(body.message || "Checkout API call failed.");
+        }
+        return body;
+      }
+
+      skuSelect.addEventListener("change", renderSummary);
+      qtyInput.addEventListener("input", renderSummary);
+
+      simulateBtn.addEventListener("click", () => {
+        const payload = buildPayload();
+        const fakeUrl = "https://checkout.example.com/session/" + encodeURIComponent(payload.items[0].sku);
+        setStatus("Simulated session created. Redirect target: " + fakeUrl, "success");
+      });
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        try {
+          setStatus("Creating secure checkout session...");
+          const payload = buildPayload();
+          const result = await createCheckoutSession(payload);
+          if (result.checkoutUrl) {
+            setStatus("Redirecting to hosted checkout...", "success");
+            window.location.href = result.checkoutUrl;
+            return;
+          }
+          setStatus("Session created but no checkoutUrl returned. Check API response.", "error");
+        } catch (error) {
+          const message = error instanceof Error ? error.message : "Checkout request failed.";
+          setStatus(message + " Set window.WC_CHECKOUT_API_BASE to your live API host.", "error");
+        }
+      });
+
+      renderSummary();
+    </script>
   </body>
 </html>
