@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Wild Concrete Studio</title>
+  <desc id="desc">Wild Concrete Studio logo card for social sharing</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fcfaf7" />
+      <stop offset="55%" stop-color="#efe9df" />
+      <stop offset="100%" stop-color="#ece8f3" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1020" cy="120" r="84" fill="#c65a2e" fill-opacity="0.2" />
+  <circle cx="180" cy="90" r="74" fill="#7a1c1c" fill-opacity="0.16" />
+  <circle cx="104" cy="560" r="68" fill="#4a5d4d" fill-opacity="0.16" />
+
+  <text x="600" y="250" text-anchor="middle" font-size="132" font-family="Didot, 'Times New Roman', serif" fill="#1f2125">WILD</text>
+  <text x="600" y="365" text-anchor="middle" font-size="132" font-family="Didot, 'Times New Roman', serif" fill="#1f2125">CONCRETE</text>
+  <text x="600" y="438" text-anchor="middle" font-size="44" letter-spacing="19" font-family="Helvetica, Arial, sans-serif" fill="#1f2125">STUDIO</text>
+
+  <text x="600" y="525" text-anchor="middle" font-size="28" font-family="Helvetica, Arial, sans-serif" fill="#2a2a2a">
+    Editorial florals for high-intent spaces
+  </text>
+</svg>
