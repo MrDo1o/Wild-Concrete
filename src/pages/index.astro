@@ -1,0 +1,267 @@
+---
+const products = [
+  {
+    name: 'Canopy Glow Orchid',
+    description: 'Premium sculptural orchid set for entry console or dining statement.',
+    sku: 'WC-FL-01',
+    price: '$85',
+    image: 'https://placehold.co/900x1125/efe8dd/121212?text=Rainforest+Flower+01'
+  },
+  {
+    name: 'Jungle Ember Heliconia',
+    description: 'Tall tropical stems with warm intensity and clean directional silhouette.',
+    sku: 'WC-FL-02',
+    price: '$72',
+    image: 'https://placehold.co/900x1125/e9e1d5/121212?text=Rainforest+Flower+02'
+  },
+  {
+    name: 'Mist Petal Anthurium',
+    description: 'Glossy, modern anthurium composition with understated luxury finish.',
+    sku: 'WC-FL-03',
+    price: '$78',
+    image: 'https://placehold.co/900x1125/e6ddd1/121212?text=Rainforest+Flower+03'
+  },
+  {
+    name: 'Emerald Veil Ginger',
+    description: 'Long-form greenery and ginger bloom arrangement for lounge styling.',
+    sku: 'WC-FL-04',
+    price: '$64',
+    image: 'https://placehold.co/900x1125/dfd6ca/121212?text=Rainforest+Flower+04'
+  },
+  {
+    name: 'Rainburst Bromeliad',
+    description: 'Compact high-impact color block plant for shelf and side table moments.',
+    sku: 'WC-FL-05',
+    price: '$52',
+    image: 'https://placehold.co/900x1125/d9d0c4/121212?text=Rainforest+Flower+05'
+  },
+  {
+    name: 'Forest Bloom Sampler',
+    description: 'Curated seasonal mix for clients testing palette and texture direction.',
+    sku: 'WC-FL-06',
+    price: '$96',
+    image: 'https://placehold.co/900x1125/d2c8bc/121212?text=Rainforest+Flower+06'
+  }
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wild Concrete Florals</title>
+    <style>
+      :root {
+        --ink: #0b0b0b;
+        --bone: #f5f2eb;
+        --stone: #cfc7bd;
+        --red: #7a1c1c;
+        --card: #f8f6f1;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bone);
+        color: var(--ink);
+        font-family: Helvetica, Arial, sans-serif;
+        line-height: 1.45;
+      }
+      .page {
+        width: min(1160px, 92%);
+        margin: 0 auto;
+        padding: 2.2rem 0 4rem;
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--stone);
+        margin-bottom: 2.2rem;
+        padding-bottom: 0.8rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .brand {
+        margin: 0;
+        font-size: 0.88rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      nav a {
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        text-decoration: none;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.4rem;
+        border: 1px solid var(--ink);
+        background: linear-gradient(145deg, #fbfaf6 0%, #f2ede4 100%);
+        margin-bottom: 2.2rem;
+        padding: 1.5rem;
+      }
+      .kicker {
+        margin: 0 0 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+      h1 {
+        margin-bottom: 0.65rem;
+        font-size: clamp(2.1rem, 6vw, 4rem);
+      }
+      .hero-meta {
+        border-left: 1px solid var(--stone);
+        padding-left: 1.1rem;
+        display: grid;
+        gap: 0.65rem;
+        align-content: start;
+      }
+      .hero-meta p,
+      .hero p,
+      .section-intro {
+        margin: 0;
+      }
+      .hero-meta strong {
+        display: block;
+        margin-bottom: 0.2rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+      .section {
+        margin-bottom: 2.2rem;
+      }
+      .section h2 {
+        margin-bottom: 0.55rem;
+        font-size: clamp(1.5rem, 3.3vw, 2.2rem);
+      }
+      .products {
+        margin-top: 1.1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stone);
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        display: block;
+        border-bottom: 1px solid var(--stone);
+      }
+      .card-body {
+        padding: 0.9rem;
+      }
+      .item-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.15rem;
+      }
+      .item-copy {
+        margin: 0 0 0.7rem;
+        color: #393939;
+        min-height: 2.8em;
+      }
+      .line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--stone);
+        padding-top: 0.55rem;
+      }
+      .sku {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #555;
+      }
+      .price {
+        color: var(--red);
+        font-size: 1.03rem;
+      }
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-meta {
+          border-left: 0;
+          border-top: 1px solid var(--stone);
+          padding-left: 0;
+          padding-top: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="index">
+      <header class="topbar">
+        <p class="brand">Wild Concrete Studio</p>
+        <nav>
+          <a href="#index">Index</a>
+          <a href="#intro">Intro</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-label="Hero">
+        <div>
+          <p class="kicker">Editorial Floral House</p>
+          <h1>Elitist. Natural. Precise.</h1>
+          <p>Tropical rainforest florals shaped with clean architectural lines. Softness handled like structure.</p>
+        </div>
+        <aside class="hero-meta">
+          <p><strong>Direction</strong>Monochrome base, expressive blooms, disciplined spacing.</p>
+          <p><strong>Experience</strong>Design studio first. Store second. Intentional and calm.</p>
+          <p><strong>Palette</strong>Bone, black, stone, moss, and deep red accents.</p>
+        </aside>
+      </section>
+
+      <section class="section" id="intro">
+        <h2>Intro</h2>
+        <p class="section-intro">Premium floral sales layout using placeholder assets, ready for real catalog and checkout links.</p>
+      </section>
+
+      <section class="section" id="pricing">
+        <h2>Pricing</h2>
+        <p class="section-intro">Starter pricing cards for rainforest-inspired flowers and studio bundles.</p>
+        <div class="products">
+          {products.map((item) => (
+            <article class="card">
+              <img src={item.image} alt={`${item.name} placeholder`} loading="lazy" />
+              <div class="card-body">
+                <h3 class="item-title">{item.name}</h3>
+                <p class="item-copy">{item.description}</p>
+                <div class="line">
+                  <span class="sku">{item.sku}</span>
+                  <span class="price">{item.price}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

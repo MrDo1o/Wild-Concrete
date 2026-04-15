@@ -1,2 +1,3 @@
-# AmeriKAN-PSIKosint-
-# Wild-Concrete
+# Wild Concrete
+
+Astro site for wildconcrete.studio.
