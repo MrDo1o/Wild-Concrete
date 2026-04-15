@@ -549,7 +549,8 @@ const products = [
     </main>
 
     <script is:inline>
-      const CHECKOUT_API_BASE = window.WC_CHECKOUT_API_BASE || "https://api.wildconcrete.studio";
+      const CHECKOUT_API_BASE =
+        window.WC_CHECKOUT_API_BASE || "https://wild-concrete-checkout-api.mrdo1o.workers.dev";
       const HANDLING_FEE_RATE = 0.1;
       const providerRoutes = {
         square_card: "/checkout/square/card-session",

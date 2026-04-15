@@ -1,0 +1,13 @@
+name = "wild-concrete-checkout-api"
+main = "src/index.ts"
+compatibility_date = "2026-04-15"
+workers_dev = true
+
+[observability.logs]
+enabled = true
+
+[vars]
+CORS_ORIGIN = "*"
+SQUARE_VERSION = "2026-01-22"
+CHECKOUT_MOCK_MODE = "true"
+SQUARE_ENV = "production"
