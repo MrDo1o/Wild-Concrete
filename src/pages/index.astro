@@ -1,52 +1,60 @@
 ---
+import "../styles/global.css";
+
 const products = [
   {
-    name: 'Canopy Glow Orchid',
-    description: 'Premium sculptural orchid set for entry console or dining statement.',
-    sku: 'WC-FL-01',
-    price: '$85',
-    priceCents: 8500,
-    image: 'https://placehold.co/900x1125/efe8dd/121212?text=Rainforest+Flower+01'
+    name: "Canopy Study No. 01",
+    subtitle: "Sculptural Orchid + Anthurium",
+    description: "High-contrast stem architecture for entry consoles and gallery-style living rooms.",
+    sku: "WC-ST-01",
+    price: "$145",
+    priceCents: 14500,
+    image: "https://placehold.co/900x1125/7a1c1c/f5f2eb?text=Editorial+Study+01"
   },
   {
-    name: 'Jungle Ember Heliconia',
-    description: 'Tall tropical stems with warm intensity and clean directional silhouette.',
-    sku: 'WC-FL-02',
-    price: '$72',
-    priceCents: 7200,
-    image: 'https://placehold.co/900x1125/e9e1d5/121212?text=Rainforest+Flower+02'
+    name: "Heatline Arrangement",
+    subtitle: "Heliconia + Ginger Composition",
+    description: "A vertical, color-forward arrangement built for clean interiors and bold focal walls.",
+    sku: "WC-ST-02",
+    price: "$128",
+    priceCents: 12800,
+    image: "https://placehold.co/900x1125/c65a2e/f5f2eb?text=Editorial+Study+02"
   },
   {
-    name: 'Mist Petal Anthurium',
-    description: 'Glossy, modern anthurium composition with understated luxury finish.',
-    sku: 'WC-FL-03',
-    price: '$78',
-    priceCents: 7800,
-    image: 'https://placehold.co/900x1125/e6ddd1/121212?text=Rainforest+Flower+03'
+    name: "Moss Form Edit",
+    subtitle: "Tropical Greens + Texture",
+    description: "Soft foliage layered with strict linework for a calm but elevated presentation.",
+    sku: "WC-ST-03",
+    price: "$118",
+    priceCents: 11800,
+    image: "https://placehold.co/900x1125/4a5d4d/f5f2eb?text=Editorial+Study+03"
   },
   {
-    name: 'Emerald Veil Ginger',
-    description: 'Long-form greenery and ginger bloom arrangement for lounge styling.',
-    sku: 'WC-FL-04',
-    price: '$64',
-    priceCents: 6400,
-    image: 'https://placehold.co/900x1125/dfd6ca/121212?text=Rainforest+Flower+04'
+    name: "Lilac Drift Piece",
+    subtitle: "Pastel Accent + Dense Bloom",
+    description: "An expressive pastel set designed to break up monochrome spaces with intentional softness.",
+    sku: "WC-ST-04",
+    price: "$132",
+    priceCents: 13200,
+    image: "https://placehold.co/900x1125/c8b6d6/0b0b0b?text=Editorial+Study+04"
   },
   {
-    name: 'Rainburst Bromeliad',
-    description: 'Compact high-impact color block plant for shelf and side table moments.',
-    sku: 'WC-FL-05',
-    price: '$52',
-    priceCents: 5200,
-    image: 'https://placehold.co/900x1125/d9d0c4/121212?text=Rainforest+Flower+05'
+    name: "Concrete Bloom Stack",
+    subtitle: "Mixed Tropical Signature",
+    description: "Editorial mixed stems with asymmetry and depth for hospitality or studio reception styling.",
+    sku: "WC-ST-05",
+    price: "$164",
+    priceCents: 16400,
+    image: "https://placehold.co/900x1125/0b0b0b/f5f2eb?text=Editorial+Study+05"
   },
   {
-    name: 'Forest Bloom Sampler',
-    description: 'Curated seasonal mix for clients testing palette and texture direction.',
-    sku: 'WC-FL-06',
-    price: '$96',
-    priceCents: 9600,
-    image: 'https://placehold.co/900x1125/d2c8bc/121212?text=Rainforest+Flower+06'
+    name: "Director's Cut Bundle",
+    subtitle: "3-Piece Seasonal Rotation",
+    description: "Quarterly color rotation with premium stems and on-brand composition guidance.",
+    sku: "WC-ST-06",
+    price: "$380",
+    priceCents: 38000,
+    image: "https://placehold.co/900x1125/cfc7bd/0b0b0b?text=Editorial+Bundle"
   }
 ];
 ---
@@ -55,372 +63,67 @@ const products = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wild Concrete Florals</title>
-    <style>
-      :root {
-        --ink: #0b0b0b;
-        --bone: #f5f2eb;
-        --stone: #cfc7bd;
-        --red: #7a1c1c;
-        --card: #f8f6f1;
-      }
-
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--bone);
-        color: var(--ink);
-        font-family: Helvetica, Arial, sans-serif;
-        line-height: 1.45;
-      }
-      .page {
-        width: min(1160px, 92%);
-        margin: 0 auto;
-        padding: 2.2rem 0 4rem;
-      }
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--stone);
-        margin-bottom: 2.2rem;
-        padding-bottom: 0.8rem;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .brand {
-        margin: 0;
-        font-size: 0.88rem;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-      }
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-      nav a {
-        border: 1px solid var(--ink);
-        color: var(--ink);
-        text-decoration: none;
-        padding: 0.35rem 0.75rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-      .hero {
-        display: grid;
-        align-content: center;
-        justify-items: center;
-        text-align: center;
-        border: 1px solid var(--stone);
-        background: linear-gradient(145deg, #fbfaf6 0%, #efebe5 100%);
-        margin-bottom: 2.2rem;
-        min-height: clamp(360px, 68vh, 760px);
-        padding: clamp(2rem, 7vw, 4rem) 1.5rem;
-      }
-
-      .logo-stack {
-        margin: 0 0 1.1rem;
-      }
-
-      .logo-line,
-      .logo-studio {
-        margin: 0;
-        font-family: 'Times New Roman', Times, serif;
-        color: #232529;
-      }
-
-      .logo-line {
-        line-height: 0.92;
-        font-size: clamp(2.2rem, 10vw, 8.4rem);
-        letter-spacing: 0.01em;
-      }
-
-      .logo-studio {
-        margin-top: clamp(0.9rem, 2vw, 1.6rem);
-        font-size: clamp(0.95rem, 2.2vw, 2.2rem);
-        letter-spacing: 0.58em;
-        text-indent: 0.58em;
-      }
-
-      .hero-sub {
-        margin: 0 0 1rem;
-        max-width: 58ch;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.7rem;
-      }
-
-      .hero-actions a {
-        border: 1px solid var(--ink);
-        color: var(--ink);
-        text-decoration: none;
-        padding: 0.45rem 0.9rem;
-        font-size: 0.72rem;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .hero-actions a.primary {
-        background: var(--ink);
-        color: var(--bone);
-      }
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: 500;
-        line-height: 1.1;
-      }
-      h1 {
-        margin-bottom: 0.65rem;
-        font-size: clamp(2.1rem, 6vw, 4rem);
-      }
-      .section-intro {
-        margin: 0;
-      }
-      .section {
-        margin-bottom: 2.2rem;
-      }
-      .section h2 {
-        margin-bottom: 0.55rem;
-        font-size: clamp(1.5rem, 3.3vw, 2.2rem);
-      }
-      .products {
-        margin-top: 1.1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--stone);
-      }
-      .card img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        display: block;
-        border-bottom: 1px solid var(--stone);
-      }
-      .card-body {
-        padding: 0.9rem;
-      }
-      .item-title {
-        margin: 0 0 0.35rem;
-        font-size: 1.15rem;
-      }
-      .item-copy {
-        margin: 0 0 0.7rem;
-        color: #393939;
-        min-height: 2.8em;
-      }
-      .line {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 1px solid var(--stone);
-        padding-top: 0.55rem;
-      }
-      .sku {
-        font-size: 0.68rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #555;
-      }
-      .price {
-        color: var(--red);
-        font-size: 1.03rem;
-      }
-
-      .checkout {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: 1.15fr 0.85fr;
-      }
-
-      .checkout-card {
-        background: var(--card);
-        border: 1px solid var(--stone);
-        padding: 1rem;
-      }
-
-      .checkout-grid {
-        display: grid;
-        gap: 0.75rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .checkout-grid .full {
-        grid-column: 1 / -1;
-      }
-
-      .field {
-        display: grid;
-        gap: 0.28rem;
-      }
-
-      .field label {
-        font-size: 0.71rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      .field input,
-      .field select,
-      .field textarea {
-        width: 100%;
-        border: 1px solid var(--stone);
-        background: #fff;
-        color: var(--ink);
-        padding: 0.56rem 0.62rem;
-        font: inherit;
-      }
-
-      .field textarea {
-        min-height: 82px;
-        resize: vertical;
-      }
-
-      .payment-methods {
-        display: grid;
-        gap: 0.45rem;
-      }
-
-      .pay-option {
-        border: 1px solid var(--stone);
-        padding: 0.55rem 0.62rem;
-        display: flex;
-        align-items: center;
-        gap: 0.55rem;
-      }
-
-      .pay-option strong {
-        font-size: 0.9rem;
-      }
-
-      .pay-option span {
-        color: #4a4a4a;
-        font-size: 0.84rem;
-      }
-
-      .checkout-summary p {
-        margin: 0;
-      }
-
-      .summary-line {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.45rem 0;
-        border-bottom: 1px solid var(--stone);
-      }
-
-      .checkout-actions {
-        margin-top: 0.8rem;
-        display: flex;
-        gap: 0.6rem;
-        flex-wrap: wrap;
-      }
-
-      .checkout-actions button {
-        border: 1px solid var(--ink);
-        background: var(--ink);
-        color: var(--bone);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.72rem;
-        padding: 0.55rem 0.85rem;
-        cursor: pointer;
-      }
-
-      .checkout-actions button.secondary {
-        background: transparent;
-        color: var(--ink);
-      }
-
-      .checkout-status {
-        margin-top: 0.65rem;
-        font-size: 0.84rem;
-        min-height: 1.2em;
-      }
-
-      .checkout-status.error {
-        color: #8d2323;
-      }
-
-      .checkout-status.success {
-        color: #1e4f2c;
-      }
-
-      .api-note {
-        color: #4a4a4a;
-        font-size: 0.82rem;
-      }
-
-      @media (max-width: 860px) {
-        .logo-line {
-          line-height: 0.96;
-        }
-
-        .logo-studio {
-          letter-spacing: 0.45em;
-          text-indent: 0.45em;
-        }
-
-        .checkout {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <title>Wild Concrete Studio</title>
   </head>
-  <body>
-    <main class="page" id="index">
+  <body class="wc-body">
+    <main class="site-shell" id="index">
       <header class="topbar">
-        <p class="brand">Wild Concrete Studio</p>
+        <p class="brand-kicker">Wild Concrete Studio</p>
         <nav>
-          <a href="#index">Index</a>
           <a href="#intro">Intro</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#collection">Collection</a>
+          <a href="#checkout">Checkout</a>
         </nav>
       </header>
 
       <section class="hero" aria-label="Hero">
-        <div class="logo-stack" role="img" aria-label="Wild Concrete Studio">
-          <p class="logo-line">WILD</p>
-          <p class="logo-line">CONCRETE</p>
-          <p class="logo-studio">STUDIO</p>
+        <div class="hero-wordmark" role="img" aria-label="Wild Concrete Studio">
+          <p class="line">WILD</p>
+          <p class="line">CONCRETE</p>
+          <p class="studio">STUDIO</p>
         </div>
-        <p class="hero-sub">Softness, shaped by structure. Editorial tropical florals with clean studio direction.</p>
-        <div class="hero-actions">
-          <a class="primary" href="#pricing">Shop Collection</a>
-          <a href="#intro">Request Bespoke</a>
+        <p class="hero-copy">Softness, shaped by structure. Editorial florals for high-intent spaces.</p>
+        <div class="hero-swatches" aria-hidden="true">
+          <span class="swatch swatch-red"></span>
+          <span class="swatch swatch-orange"></span>
+          <span class="swatch swatch-green"></span>
+          <span class="swatch swatch-lilac"></span>
         </div>
       </section>
 
       <section class="section" id="intro">
-        <h2>Intro</h2>
-        <p class="section-intro">Premium floral sales layout using placeholder assets, ready for real catalog and checkout links.</p>
+        <h2>Studio Direction</h2>
+        <p class="section-copy">This is a color-driven editorial storefront: premium arrangements, clear pricing, and a direct path to checkout.</p>
+        <div class="manifesto-grid">
+          <article>
+            <h3>Color + Control</h3>
+            <p>Deep neutrals for structure, expression tones for the florals.</p>
+          </article>
+          <article>
+            <h3>Design-First Commerce</h3>
+            <p>A studio aesthetic with conversion-ready sections and API checkout hooks.</p>
+          </article>
+          <article>
+            <h3>Operationally Ready</h3>
+            <p>Frontend payload contract already wired for Square, Cash App Pay, Apple Pay, and Google Pay.</p>
+          </article>
+        </div>
       </section>
 
-      <section class="section" id="pricing">
-        <h2>Pricing</h2>
-        <p class="section-intro">Starter pricing cards for rainforest-inspired flowers and studio bundles.</p>
-        <div class="products">
+      <section class="section" id="collection">
+        <h2>Collection + Pricing</h2>
+        <p class="section-copy">Current studies and bundles. Swap placeholders for catalog images any time.</p>
+        <div class="product-grid">
           {products.map((item) => (
-            <article class="card">
+            <article class="product-card">
               <img src={item.image} alt={`${item.name} placeholder`} loading="lazy" />
-              <div class="card-body">
-                <h3 class="item-title">{item.name}</h3>
-                <p class="item-copy">{item.description}</p>
-                <div class="line">
-                  <span class="sku">{item.sku}</span>
-                  <span class="price">{item.price}</span>
+              <div class="product-body">
+                <p class="subtitle">{item.subtitle}</p>
+                <h3>{item.name}</h3>
+                <p class="description">{item.description}</p>
+                <div class="meta">
+                  <span>{item.sku}</span>
+                  <strong>{item.price}</strong>
                 </div>
               </div>
             </article>
@@ -430,118 +133,82 @@ const products = [
 
       <section class="section" id="checkout">
         <h2>Checkout</h2>
-        <p class="section-intro">Customer checkout framework with API hooks for Square, Cash App Pay, Apple Pay, and Google Pay.</p>
+        <p class="section-copy">Customer checkout with provider routing and backend API contract already in place.</p>
 
-        <div class="checkout">
-          <form class="checkout-card" id="checkout-form" novalidate>
-            <div class="checkout-grid">
-              <div class="field full">
-                <label for="customerName">Customer Name</label>
+        <div class="checkout-grid">
+          <form class="panel" id="checkout-form" novalidate>
+            <div class="fields">
+              <label class="field full">
+                <span>Customer Name</span>
                 <input id="customerName" name="customerName" autocomplete="name" required />
-              </div>
-
-              <div class="field">
-                <label for="email">Email</label>
+              </label>
+              <label class="field">
+                <span>Email</span>
                 <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone</label>
+              </label>
+              <label class="field">
+                <span>Phone</span>
                 <input id="phone" name="phone" autocomplete="tel" />
-              </div>
-
-              <div class="field">
-                <label for="sku">Product</label>
+              </label>
+              <label class="field">
+                <span>Product</span>
                 <select id="sku" name="sku">
                   {products.map((item) => (
                     <option value={item.sku} data-name={item.name} data-price-cents={item.priceCents}>{item.name} ({item.price})</option>
                   ))}
                 </select>
-              </div>
-
-              <div class="field">
-                <label for="quantity">Quantity</label>
+              </label>
+              <label class="field">
+                <span>Quantity</span>
                 <input id="quantity" name="quantity" type="number" value="1" min="1" max="50" required />
-              </div>
-
-              <div class="field full">
-                <label for="addressLine1">Address</label>
+              </label>
+              <label class="field full">
+                <span>Delivery Address</span>
                 <input id="addressLine1" name="addressLine1" autocomplete="address-line1" />
-              </div>
-
-              <div class="field">
-                <label for="city">City</label>
+              </label>
+              <label class="field">
+                <span>City</span>
                 <input id="city" name="city" autocomplete="address-level2" />
-              </div>
-
-              <div class="field">
-                <label for="state">State</label>
+              </label>
+              <label class="field">
+                <span>State</span>
                 <input id="state" name="state" autocomplete="address-level1" />
-              </div>
-
-              <div class="field">
-                <label for="postalCode">Zip</label>
+              </label>
+              <label class="field">
+                <span>Zip</span>
                 <input id="postalCode" name="postalCode" autocomplete="postal-code" />
-              </div>
-
-              <div class="field full">
-                <label for="notes">Order Notes</label>
-                <textarea id="notes" name="notes" placeholder="Card message, delivery window, or special requests"></textarea>
-              </div>
-            </div>
-
-            <h3 style="margin: 1rem 0 0.6rem;">Payment Method</h3>
-            <div class="payment-methods">
-              <label class="pay-option">
-                <input type="radio" name="paymentMethod" value="square_card" checked />
-                <span><strong>Card (Square)</strong> Standard card checkout session.</span>
               </label>
-              <label class="pay-option">
-                <input type="radio" name="paymentMethod" value="cash_app_pay" />
-                <span><strong>Cash App Pay</strong> Square digital wallet flow.</span>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="paymentMethod" value="apple_pay" />
-                <span><strong>Apple Pay</strong> Wallet checkout session for Safari/iOS.</span>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="paymentMethod" value="google_pay" />
-                <span><strong>Google Pay</strong> Wallet checkout session for Chrome/Android.</span>
+              <label class="field full">
+                <span>Order Notes</span>
+                <textarea id="notes" name="notes" placeholder="Card message, delivery timing, special requests"></textarea>
               </label>
             </div>
 
-            <div class="checkout-actions">
+            <h3 class="pay-heading">Payment Method</h3>
+            <div class="pay-options">
+              <label><input type="radio" name="paymentMethod" value="square_card" checked /> Card (Square)</label>
+              <label><input type="radio" name="paymentMethod" value="cash_app_pay" /> Cash App Pay</label>
+              <label><input type="radio" name="paymentMethod" value="apple_pay" /> Apple Pay</label>
+              <label><input type="radio" name="paymentMethod" value="google_pay" /> Google Pay</label>
+            </div>
+
+            <div class="actions">
               <button type="submit">Create Secure Checkout</button>
-              <button type="button" class="secondary" id="simulateBtn">Simulate API Response</button>
+              <button type="button" class="ghost" id="simulateBtn">Simulate API Response</button>
             </div>
-            <p class="checkout-status" id="checkoutStatus" aria-live="polite"></p>
+            <p class="status" id="checkoutStatus" aria-live="polite"></p>
           </form>
 
-          <aside class="checkout-card checkout-summary">
-            <h3 style="margin-bottom: 0.8rem;">Order Summary</h3>
-            <div class="summary-line">
-              <p id="summaryItem">Canopy Glow Orchid</p>
-              <p id="summaryPrice">$85.00</p>
-            </div>
-            <div class="summary-line">
-              <p>Quantity</p>
-              <p id="summaryQty">1</p>
-            </div>
-            <div class="summary-line">
-              <p>Subtotal</p>
-              <p id="summarySubtotal">$85.00</p>
-            </div>
-            <div class="summary-line">
-              <p>Service + Handling</p>
-              <p>$8.50</p>
-            </div>
-            <div class="summary-line" style="font-weight: 700;">
-              <p>Total</p>
-              <p id="summaryTotal">$93.50</p>
-            </div>
-            <p class="api-note" style="margin-top: 0.9rem;">
-              API-ready contract: this form sends JSON to provider-specific endpoints. Wire your backend to return
-              <code>checkoutUrl</code> and the client auto-redirects.
+          <aside class="panel summary">
+            <h3>Order Summary</h3>
+            <div class="row"><span id="summaryItem">Canopy Study No. 01</span><span id="summaryPrice">$145.00</span></div>
+            <div class="row"><span>Quantity</span><span id="summaryQty">1</span></div>
+            <div class="row"><span>Subtotal</span><span id="summarySubtotal">$145.00</span></div>
+            <div class="row"><span>Service + Handling</span><span>$14.50</span></div>
+            <div class="row total"><span>Total</span><span id="summaryTotal">$159.50</span></div>
+            <p class="api-note">
+              API contract is active. Frontend posts JSON payload to provider route and expects
+              <code>checkoutUrl</code> in response.
             </p>
           </aside>
         </div>
@@ -602,7 +269,7 @@ const products = [
 
       function setStatus(text, type = "") {
         statusEl.textContent = text;
-        statusEl.className = "checkout-status" + (type ? " " + type : "");
+        statusEl.className = "status" + (type ? " " + type : "");
       }
 
       function buildPayload() {
@@ -650,11 +317,13 @@ const products = [
         if (!route) {
           throw new Error("Unsupported payment method.");
         }
+
         const response = await fetch(CHECKOUT_API_BASE + route, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
+
         const body = await response.json().catch(() => ({}));
         if (!response.ok) {
           throw new Error(body.message || "Checkout API call failed.");
